@@ -17,7 +17,16 @@
     </header>
 
     <main>
-        <div class="cart-container">
+        <!-- Mensaje de carrito vacío -->
+        <div id="empty-cart-message" class="empty-cart">
+            <img src="/img/carrovacio.png" alt="Carrito vacío">
+            <p>Agrega algún producto al carrito</p>
+            <p>Todos los productos que agregues se reflejarán aquí</p>
+            <button onclick="window.location.href='/html/menu.html'">Empezar a comprar</button>
+        </div>
+
+        <!-- Contenedor del carrito (se muestra cuando hay productos) -->
+        <div class="cart-container" id="cart-container">
             <h2>Tu Pedido</h2>
             <ul id="cart-items">
                 <!-- Los elementos del carrito se agregarán aquí dinámicamente -->

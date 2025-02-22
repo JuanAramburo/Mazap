@@ -100,6 +100,22 @@ function updateTotal() {
     addToCartButton.textContent = `Agregar al carrito ${total}$ MXN`;
 }
 
+// Definir las rutas de las imágenes de las hamburguesas
+const burgerImages = {
+    classic: '/img/ham1.jpg',       // Classic Burger
+    bacon: '/img/ham2.jpg',         // Bacon Deluxe
+    spicy: '/img/ham3.jpg',         // Spicy Jalapeño
+    mushroom: '/img/ham4.jpg',      // Mushroom Swiss
+    bbq: '/img/ham5.jpg',           // BBQ Ranch
+    double: '/img/ham6.jpg',        // Double Cheeseburger
+    veggie: '/img/ham7.jpg',        // Veggie Burger
+    chicken: '/img/ham8.jpg'        // Chicken Avocado
+};
+
+// Obtener la imagen correspondiente a la hamburguesa seleccionada
+const selectedBurgerImage = burgerImages[burger] || '/img/default-burger.jpg'; // Imagen por defecto si no se encuentra
+
+// Modificar la función addToCart para incluir la imagen
 function addToCart() {
     const totalPrice = parseFloat(addToCartButton.textContent.match(/\d+/)[0]);
 
@@ -110,6 +126,7 @@ function addToCart() {
 
     const orderData = {
         burgerName: burgerName.textContent,
+        burgerImage: selectedBurgerImage, // Agregar la ruta de la imagen
         burgerQuantity: quantity,
         extras: extras,
         totalPrice: totalPrice
