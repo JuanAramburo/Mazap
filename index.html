@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazAppBurguer Login</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="/img/logo.png" alt="MazAppBurguer Logo">
+        </div>
+        <form action="" method="post">
+            <div class="input-field">
+                <input type="text" placeholder="Usuario, correo o teléfono">
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Contraseña">
+            </div>
+            <div class="forgot-password">
+                <a href="/html/recuperacion.html">Olvidé mi contraseña</a>
+            </div>
+            <button type="submit" class="login-button" id="loginButton">
+                Iniciar sesión
+              </button>
+            <div class="register-link">
+                ¿No tienes una cuenta?
+                <a href="/html/crear-cuenta.html">Registrarse</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    document.getElementById('loginButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita el comportamiento por defecto del botón (enviar el formulario)
+      window.location.href = '/html/inicio.html';
+    });
+  </script>

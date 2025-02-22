@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta</title>
+    <link rel="stylesheet" href="/css/cuenta.css">
+</head>
+<body>
+    <div class="container">
+        <center>
+        <header>
+            <h2>Cuenta</h2>
+        </header>
+        </center>
+
+        <div class="profile">
+            <div class="avatar">
+                <img src="/img/cuenta.png" alt="Usuario" class="avatar2">
+            </div>
+            <div class="user-info">
+                <h3>MazAppBurger</h3>
+                <p>Bienvenido, usuario</p>
+            </div>
+        </div>
+
+        <div class="wallet">
+            <button class="menu-item" onclick="window.location.href='mantenimiento.html'"><img src="/img/billetera.png" alt=""> Cartera</button>
+            <button class="menu-item" onclick="window.location.href='mantenimiento.html'"><img src="/img/icons8-tarjeta-de-fidelidad-50.png" alt=""> Cupones</button>
+        </div>
+
+        <nav class="menu">
+            <button class="menu-item" onclick="window.location.href='favoritos.html'"><img src="/img/corazon amarillo.png" alt=""> Favoritas</button>
+            <button class="menu-item" onclick="window.location.href='mantenimiento.html'"><img src="/img/icons8-recibo-50.png" alt=""> Pedidos</button>
+            <button class="menu-item" onclick="window.location.href='mantenimiento.html'"><img src="/img/icons8-servicio-al-cliente-50.png" id="servicioCliente" alt="">Atención al Cliente</button>
+            <button class="menu-item" onclick="window.location.href='mantenimiento.html'"><img src="/img/icons8-configuración-50.png" alt="" id="conf" >Configuración</button>
+            <button class="menu-item" id="cerrarSesion"><img src="/img/icons8-cerrar-sesión-50.png" alt=""id="cerrar" >Cerrar sesión</button>
+        </nav>
+
+        <footer>
+            <nav class="bottom-nav">
+                <button class="nav-btn" id="btnInicio">
+                    <img src="/img/home -blanco.png" alt="Home">
+                </button>
+                <button class="nav-btn" id="btnFavoritos">
+                    <img src="/img/favorite.png" alt="Favorites">
+                </button>
+                <button class="nav-btn main-btn" id="btnMenu">
+                    <img src="/img/menu.png" alt="Add">
+                </button>
+                <button class="nav-btn" id="btnCarrito">
+                    <img src="/img/carrito-de-compras.png" alt="Cart">
+                </button>
+                <button class="nav-btn" id="btnUsuario">
+                    <img src="/img/user-amarillo.png" alt="Profile">
+                </button>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
+<script src="/js/mazappburger.js"></script>

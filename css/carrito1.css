@@ -1,0 +1,220 @@
+        :root {
+            --primary-color: #FF8C00;
+            --background-color: #121212;
+            --text-color: #ffffff;
+            --secondary-text: #a3a3a3;
+            --border-color: #2a2a2a;
+            --accent-orange: #F4900C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        .back-button {
+            padding-left: 1rem;
+            display: flex;
+            width: 90px;
+        }
+
+        .container {
+            padding: 0 1rem;
+        }
+
+        .burger-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .price {
+            color: var(--accent-orange);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .coupon-applied {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .coupon-text {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .coupon-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+
+        .extras-title {
+            margin: 1.5rem 0 1rem;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .extra-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            color: var(--text-color);
+        }
+
+        .extra-item .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            margin-right: 0.8rem;
+        }
+
+        .extra-item-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .extra-price {
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .quantity-btn {
+            background-color: transparent;
+            border: 1.5px solid var(--accent-orange);
+            color: var(--accent-orange);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-display {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background-color: transparent;
+            color: var(--accent-orange);
+            border: 1.5px solid var(--accent-orange);
+            padding: 1rem;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .burger-info {
+                padding: 2rem;
+                background-color: #222;
+                border-radius: 12px;
+            }
+
+            .extras-section {
+                padding: 2rem;
+                background-color: #222;
+                border-radius: 12px;
+            }
+        }
+        .extra-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            color: var(--text-color);
+        }
+
+        .extra-item-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+
+        .extra-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .extra-counter {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .extra-btn {
+            background-color: transparent;
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 2px;
+        }
+
+        .extra-quantity {
+            color: var(--text-color);
+            font-size: 1rem;
+            min-width: 16px;
+            text-align: center;
+        }

@@ -1,0 +1,38 @@
+.menu-item {
+    position: relative; /* Para posicionar el corazón correctamente */
+}
+
+.heart {
+    position: absolute;
+    top: 10px; /* Ajusta la posición vertical */
+    right: 10px; /* Ajusta la posición horizontal */
+    cursor: pointer;
+    z-index: 1; /* Asegura que el corazón esté por encima de otros elementos */
+}
+
+.heart img {
+    width: 24px; /* Tamaño del corazón */
+    height: 24px;
+    transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.heart:hover img {
+    transform: scale(1.2); /* Efecto de hover */
+}
+.reset-button {
+    background-color: #FF9F0D;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 800; /* Texto más grueso */
+    display: block; /* Convertir en bloque para centrar */
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.reset-button:hover {
+    background-color: #e08e0b;
+}

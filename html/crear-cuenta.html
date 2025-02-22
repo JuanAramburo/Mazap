@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazAppBurguer Registro</title>
+    <link rel="stylesheet" href="/css/registro.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo">
+            <img src="/img/logo.png" alt="MazAppBurguer Logo">
+        </div>
+        <form>
+            <div class="input-field">
+                <input type="email" placeholder="Correo electrónico">
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Crea una contraseña">
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Introduce un usuario">
+            </div>
+            <div class="forgot-password">
+                <a href="/index.html">Ya tienes una cuenta? Iniciar sesion -</a>
+            </div>
+            <button type="submit" class="create-account-btn" id="btnCrearcuenta">Crear cuenta</button>
+            
+            <button type="button" class="social-login-btn google-btn" >
+                <img src="/img/google.png" alt="Google Icon" class="social-icon">
+                Continuar con Google
+            </button>
+            
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('btnCrearcuenta').addEventListener('click', function(event) {
+      event.preventDefault(); // Evita el comportamiento por defecto del botón (enviar el formulario)
+      window.location.href = '/index.html';
+    });
+  </script>

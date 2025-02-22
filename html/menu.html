@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Clásico</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/favoritos.css">
+</head>
+
+<body>
+    <header>
+        <button class="back-button">
+            <img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="flecha"
+                onclick="goBack()">
+        </button>
+        <h1>Menú Clásico</h1>
+        <button class="cart-button">
+            <img src="/img/canasta.png" alt="Carrito" class="carrito" onclick="window.location.href='carrito.html'">
+        </button>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <span class="search-icon">
+                <img src="/img/f9bb81e576c1a361c61a8c08945b2c48-icono-de-busqueda.webp" alt="Buscar" class="busqueda">
+            </span>
+            <input type="text" placeholder="¿Qué deseas ordenar?" class="search-bar">
+        </div>
+
+        <section class="menu-grid">
+            <div class="menu-item" id="burger-1">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham1.jpg" alt="Classic Burger" class="ham">
+                <h3>Classic Burger</h3>
+                <p class="price">Precio: 80$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=classic'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-2">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham2.jpg" alt="Bacon Deluxe" class="ham">
+                <h3>Bacon Deluxe</h3>
+                <p class="price">Precio: 90$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=bacon'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-3">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham3.jpg" alt="Spicy Jalapeño" class="ham">
+                <h3>Spicy Jalapeño</h3>
+                <p class="price">Precio: 85$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=spicy'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-4">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham4.jpg" alt="Mushroom Swiss" class="ham">
+                <h3>Mushroom Swiss</h3>
+                <p class="price">Precio: 88$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=mushroom'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-5">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham5.jpg" alt="BBQ Ranch" class="ham">
+                <h3>BBQ Ranch</h3>
+                <p class="price">Precio: 87$</p>
+                <button class="order-button" onclick="window.location.href='carrito1.html?burger=bbq'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-6">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham6.jpg" alt="Double Cheeseburger" class="ham">
+                <h3>Double Cheeseburger</h3>
+                <p class="price">Precio: 95$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=double'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-7">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham7.jpg" alt="Veggie Burger" class="ham">
+                <h3>Veggie Burger</h3>
+                <p class="price">Precio: 82$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=veggie'">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-8">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon-vacio.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham8.jpg" alt="Chicken Avocado" class="ham">
+                <h3>Chicken Avocado</h3>
+                <p class="price">Precio: 89$</p>
+                <button class="order-button"
+                    onclick="window.location.href='carrito1.html?burger=chicken'">Ordenar</button>
+            </div>
+        </section><br><br><br><br><br><br><br>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <button class="nav-btn" id="btnInicio">
+                <img src="/img/home -blanco.png" alt="Home">
+            </button>
+            <button class="nav-btn" id="btnFavoritos">
+                <img src="/img/favorite.png" alt="Favorites">
+            </button>
+            <button class="nav-btn main-btn" id="btnMenu">
+                <img src="/img/menu.png" alt="Add">
+            </button>
+            <button class="nav-btn" id="btnCarrito">
+                <img src="/img/carrito-de-compras.png" alt="Cart">
+            </button>
+            <button class="nav-btn" id="btnUsuario">
+                <img src="/img/user.png" alt="Profile">
+            </button>
+        </nav>
+    </footer>
+
+<script src="/js/mazappburger.js"></script>
+<script src="/js/menu.js"></script>
+</body>
+
+</html>

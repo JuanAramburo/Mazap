@@ -1,0 +1,145 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+/* Center Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+}
+
+.logo{
+    width: 300px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.exito{
+    padding: 10px;
+}
+
+p{
+    margin: 10px;
+    text-align: center;
+    color: #575757;
+}
+
+.btn-exito{
+    border: none;
+    background: none;
+    margin: 10px;
+}
+
+.ok{
+    width: 150px;
+}
+
+button:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .menu-item {
+        width: calc(33.33% - 16px); /* 3 por fila */
+    }
+}
+
+/* Ajuste para móviles */
+@media screen and (max-width: 768px) {
+    .menu-item {
+        width: calc(50% - 16px); /* 2 por fila */
+    }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    .menu-item {
+        width: 100%; /* 1 por fila */
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        grid-template-columns: repeat(2, 1fr); /* Sigue siendo de 2 en 2 en móviles */
+    }
+}
+
+/* Responsive Styles for 500px or less */
+@media screen and (max-width: 500px) {
+    .burger-info h2, .burger-info p {
+        color: #1A1A1A;
+        margin-right: 1.5rem;
+    }
+
+    .bottom-nav {
+        padding: 10px;
+    }
+
+    .nav-btn img {
+        height: 35px;
+        width: 38px;
+    }
+
+    .main-btn {
+        padding: 10px;
+        transform: translateY(-15px);
+    }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 40px;
+    }
+
+    .burger-card {
+        margin-bottom: 0;
+    }
+
+    .menu-card {
+        grid-column: span 2;
+    }
+
+    .burger-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .bottom-nav {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 15px 15px 0 0;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger App</title>
+    <link rel="stylesheet" href="/css/inicio.css">
+</head>
+<body>
+    <header>
+        <br><br>
+        <nav>
+            <div class="delivery-options">
+                <button class="active" id="btnDomicilio">A domicilio</button>
+                <button id="btnMostrador">Para llevar</button>
+            </div>
+            <div class="location">
+                <img src="/img/Ubuicacion.png" alt="Ubicación">
+                <span>Ahora · Mazatlán, Sin</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="burger-card">
+            <div class="burger-info">
+                <h2>Bacon Deluxe</h2>
+                <p>Carne de res con tomate y ceboll</p>
+                <button class="order-btn" onclick="window.location.href='carrito1.html?burger=bacon'">Ordenar →</button>
+            </div>
+            <div class="burger-image">
+                <img src="/img/ham2.jpg" alt="Cheese Burger">
+            </div>
+        </div>
+
+        <div class="burger-card">
+            <div class="burger-info">
+                <h2>Clasic Burguer</h2>
+                <p>Carne de res con tomate y cebolla</p>
+                <button class="order-btn" onclick="window.location.href='carrito1.html?burger=clasic'">Ordenar →</button>
+            </div>
+            <div class="burger-image">
+                <img src="/img/ham1.jpg" alt="Classic Burger">
+            </div>
+        </div>
+
+        <div class="burger-card">
+            <div class="burger-info">
+                <h2>Spicy Jalapeño</h2>
+                <p>Carne de res con tomate y cebolla<br></p><br>
+                <button class="order-btn" onclick="window.location.href='carrito1.html?burger=Spicy'">Ordenar →</button>
+            </div>
+            <div class="burger-image">
+                <img src="/img/ham3.jpg" alt="Menu Burgers">
+            </div>
+        </div>
+        <div class="burger-card">
+            <div class="burger-info">
+                <h2>Double Cheeseburger</h2>
+                <p>Carne de res con tomate y cebolla<br></p><br>
+                <button class="order-btn" onclick="window.location.href='carrito1.html?burger=cheese'">Ordenar →</button>
+            </div>
+            <div class="burger-image">
+                <img src="/img/ham6.jpg" alt="Menu Burgers">
+            </div>
+        </div><br><br><br><br><br><br><br>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <button class="nav-btn" id="btnInicio">
+                <img src="/img/home.png" alt="Home">
+            </button>
+            <button class="nav-btn" id="btnFavoritos">
+                <img src="/img/favorite.png" alt="Favorites">
+            </button>
+            <button class="nav-btn main-btn" id="btnMenu">
+                <img src="/img/menu.png" alt="Add">
+            </button>
+            <button class="nav-btn" id="btnCarrito">
+                <img src="/img/carrito-de-compras.png" alt="Cart">
+            </button>
+            <button class="nav-btn" id="btnUsuario">
+                <img src="/img/user.png" alt="Profile">
+            </button>
+        </nav>
+    </footer>
+<script src="/js/mazappburger.js"></script>
+</body>
+</html>

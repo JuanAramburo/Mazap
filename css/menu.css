@@ -1,0 +1,320 @@
+/* Global Styles */
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1A1A1A;
+}
+
+.back-button, .cart-button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+}
+
+.back-button {
+    width: 80px;
+}
+
+.flecha {
+    width: 80px;
+}
+
+.cart-button {
+    width: 100px;
+}
+
+.carrito {
+    width: 70px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 25px;
+    border: 1px solid #333;
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.busqueda {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: #2A2A2A;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ham {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #FFFFFF;
+}
+
+.price {
+    color: #FF9F0D;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.order-button {
+    background-color: #FF9F0D;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0); /* Añadí un borde para mejor visibilidad */
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.order-button:hover {
+    transform: scale(1.10);
+}
+
+/* Bottom Navigation (Footer - No se modifica en ninguna media query) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1A1A1A;
+    padding: 15px;
+    border-top: 1px solid #333;
+    border-radius: 15px 15px 0 0;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.nav-btn img {
+    height: 45px;
+    width: 48px;
+}
+
+.main-btn {
+    background-color: #dddddd;
+    border-radius: 50%;
+    padding: 15px;
+    transform: translateY(-20px);
+}
+button:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .search-container {
+        max-width: 70%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .search-container {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .ham {
+        width: 120px;
+        height: 120px;
+    }
+
+    .menu-item {
+        padding: 15px;
+    }
+}
+
+/* Responsive a partir de 330px */
+@media screen and (max-width: 330px) {
+    /* Header */
+    header {
+        padding: 10px;
+    }
+
+    .back-button, .cart-button {
+        width: 60px;
+    }
+
+    .flecha, .carrito {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    /* Search Bar */
+    .search-container {
+        padding: 0 10px;
+    }
+
+    .search-bar {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .search-icon {
+        left: 25px;
+    }
+
+    .busqueda {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .ham {
+        width: 100px;
+        height: 100px;
+    }
+
+    .menu-item {
+        padding: 10px;
+    }
+
+    .menu-item h3 {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .order-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 80px;
+        height: 35px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .burger-info h2, .burger-info p {
+        color: #1A1A1A;
+        margin-right: 1.5rem;
+    }
+
+    .bottom-nav {
+        padding: 10px;
+    }
+
+    .nav-btn img {
+        height: 35px;
+        width: 38px;
+    }
+
+    .main-btn {
+        padding: 10px;
+        transform: translateY(-15px);
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidoDom.css">
+    <title>Pedido</title>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()"><img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="flecha"></button>
+        <br>
+        <h2>Resumen de tu pedido</h2>
+    </header>
+
+    <section>
+        <ul id="cart-summary"></ul>
+
+        <div class="payment-methods">
+            <h3>Metodo de pago</h3>
+            <button id="btnCambiarPago">Cambiar metodo de pago</button>
+            <div class="pago">
+                <label class="method"><img src="/img/metodo-de-pago.png" alt="" class="metodo"> Tarjeta</label>
+                <label class="method"><img src="/img/cuenta-bancaria.png" alt="" class="metodo"> Cuenta de banco</label>
+                <label class="method"><img src="/img/metodo-de-pago (1).png" alt="" class="metodo"> Efectivo</label>
+            </div>
+        </div>
+
+        <h4>Dirreccion de la tienda: </h4>
+        <div class="address">
+            <span><img src="/img/mapas-y-banderas.png" alt="" class="direccion"> Mazatlán, Sin.</span>
+            <button class="editar"><img src="/img/circulo.png" alt="" class="editar"></button>
+        </div>
+
+
+        <div class="summary">
+            <p>Subtotal: <span id="subtotal">0$ MXN</span></p>
+            <p>Descuento: <span id="descuento" style="color: red;">0$ MXN</span></p>
+            <p><strong>Total:</strong> <span id="total">0$ MXN</span></p>
+        </div>
+    
+        <button class="btn-pay" id="btnExito">Realizar pago</button>
+    </section>
+
+</body>
+</html>
+<script src="/js/pedidoDom.js"></script>
+<script src="/js/mazappburger.js"></script>

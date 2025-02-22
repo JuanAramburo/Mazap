@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Clásico</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/favoritos.css">
+</head>
+
+<body>
+    <header>
+        <button class="back-button">
+            <img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="flecha"
+                onclick="goBack()">
+        </button>
+        <h1>Favoritos</h1>
+        <button class="cart-button">
+            <a href="/html/carrito.html"><img src="/img/canasta.png" alt="Carrito" class="carrito" ></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <span class="search-icon">
+                <img src="/img/f9bb81e576c1a361c61a8c08945b2c48-icono-de-busqueda.webp" alt="Buscar" class="busqueda">
+            </span>
+            <input type="text" placeholder="¿Qué deseas ordenar?" class="search-bar">
+        </div>
+
+        <section class="menu-grid">
+            <div class="menu-item" id="burger-1">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham1.jpg" alt="Classic Burger" class="ham">
+                <h3>Classic Burger</h3>
+                <p class="price">Precio: 80$</p>
+                <button class="order-button">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-2">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham2.jpg" alt="Bacon Deluxe" class="ham">
+                <h3>Bacon Deluxe</h3>
+                <p class="price">Precio: 90$</p>
+                <button class="order-button">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-3">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham3.jpg" alt="Spicy Jalapeño" class="ham">
+                <h3>Spicy Jalapeño</h3>
+                <p class="price">Precio: 85$</p>
+                <button class="order-button">Ordenar</button>
+            </div>
+
+            <div class="menu-item" id="burger-4">
+                <span class="heart" data-state="active">
+                    <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+                </span>
+                <img src="/img/ham4.jpg" alt="Mushroom Swiss" class="ham">
+                <h3>Mushroom Swiss</h3>
+                <p class="price">Precio: 88$</p>
+                <button class="order-button">Ordenar</button>
+            </div>
+        </section>
+        <button class="reset-button">Resetear Favoritos</button> <!-- Botón de reset -->
+        <br><br><br><br><br><br><br>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <button class="nav-btn" id="btnInicio">
+                <img src="/img/home -blanco.png" alt="Home">
+            </button>
+            <button class="nav-btn" id="btnFavoritos">
+                <img src="/img/favorite-am.png" alt="Favorites">
+            </button>
+            <button class="nav-btn main-btn" id="btnMenu">
+                <img src="/img/menu.png" alt="Add">
+            </button>
+            <button class="nav-btn" id="btnCarrito">
+                <img src="/img/carrito-de-compras.png" alt="Cart">
+            </button>
+            <button class="nav-btn" id="btnUsuario">
+                <img src="/img/user.png" alt="Profile">
+            </button>
+        </nav>
+    </footer>
+
+<script src="/js/favoritos.js"></script>
+<script src="/js/mazappburger.js"></script>
+</body>
+
+</html>

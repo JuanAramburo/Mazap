@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Final - Burger App</title>
+    <link rel="stylesheet" href="/css/carrito.css">
+</head>
+
+<body>
+    <header>
+        <a href="/html/inicio.html" class="back-button">
+            <img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver">
+        </a>
+        <h1>Carrito de Compras</h1>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <h2>Tu Pedido</h2>
+            <ul id="cart-items">
+                <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
+            </ul>
+            <div class="total-section">
+                <h3>Total:</h3>
+                <p id="total-price">0$ MXN</p>
+            </div>
+            <button class="checkout-button" onclick="proceedToCheckout()">Pagar</button>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <button class="nav-btn" id="btnInicio">
+                <img src="/img/home -blanco.png" alt="Home">
+            </button>
+            <button class="nav-btn" id="btnFavoritos">
+                <img src="/img/favorite.png" alt="Favorites">
+            </button>
+            <button class="nav-btn main-btn" id="btnMenu">
+                <img src="/img/menu.png" alt="Add">
+            </button>
+            <button class="nav-btn" id="btnCarrito">
+                <img src="/img/carrito-de-compras-am.png" alt="Cart">
+            </button>
+            <button class="nav-btn" id="btnUsuario">
+                <img src="/img/user.png" alt="Profile">
+            </button>
+        </nav>
+    </footer>
+
+<script src="/js/mazappburger.js"></script>
+<script src="/js/carrito.js"></script>
+</body>
+
+</html>

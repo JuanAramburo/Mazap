@@ -1,0 +1,49 @@
+<!-- metodoPago.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pago.css">
+    <title>Seleccionar Método de Pago</title>
+</head>
+<body>
+    <header>
+        <button class="back-button"><img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="flecha"></button>
+        <br>
+        <h2>Selecciona tu Método de Pago</h2>
+    </header>
+    <section>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment" value="tarjeta"><img src="/img/metodo-de-pago.png" alt="" class="metodo">Tarjeta
+            </label>
+            <br>
+            <div id="saved-card" style="display: none;"></div>
+            <form id="card-form" style="display: none;">
+                <h3>Registrar Tarjeta</h3>
+                <br>
+                <label for="card-number">Número de tarjeta:</label>
+                <input type="text" id="card-number" maxlength="16" placeholder="**** **** **** 1234">
+                <label for="card-number">Nombre del titular:</label>
+                <input type="text" id="card-holder">
+                <label for="card-number">Fecha de expiración:</label>
+                <input type="text" id="expiry-date" placeholder="(MM/YY)" maxlength="5">
+                <label for="card-number">CVV:</label>
+                <input type="text" id="cvv" placeholder="123" maxlength="3">
+            </form>
+            <label>
+                <input type="radio" name="payment" value="banco"><img src="/img/cuenta-bancaria.png" alt="" class="metodo"> Cuenta de banco
+            </label>
+            <label>
+                <input type="radio" name="payment" value="efectivo"><img src="/img/metodo-de-pago (1).png" alt="" class="metodo"> Efectivo
+            </label>
+        </div>
+    
+    
+        <button id="btnGuardarPago">Guardar y regresar</button>
+    </section>
+
+<script src="/js/pago.js"></script>
+</body>
+</html>

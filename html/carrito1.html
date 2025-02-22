@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Burger App</title>
+    <link rel="stylesheet" href="/css/carrito1.css">
+</head>
+<body>
+    <img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="back-button" onclick="goBack()">
+    
+    <div class="container">
+        <div class="burger-info">
+            <h1 class="burger-title" id="burger-name">Cheese Burguer Plus</h1>
+            <p class="price" id="burger-price">80$ MXN</p>
+            <p class="description" id="burger-description">Una deliciosa hamburguesa con queso amarillo, lechuga tomate, cebolla, carne, queso philadelphia y 180g de carne.</p>
+            
+            <div class="coupon-applied">
+                <div>
+                    <p class="coupon-text">Cupón aplicado</p>
+                    <p class="coupon-text">El descuento se aplica en el carrito</p>
+                </div>
+                <span class="coupon-icon">!</span>
+            </div>
+        </div>
+
+        <div class="extras-section">
+            <h2 class="extras-title">Acompaña tu hamburguesa con</h2>
+            
+            <div class="extra-item">
+                <span>Refresco</span>
+                <div class="extra-info">
+                    <span class="extra-price">20$ MXN</span>
+                    <div class="extra-counter">
+                        <button class="extra-btn" onclick="updateExtra('refresco', -1)">-</button>
+                        <span class="extra-quantity" id="refresco-quantity">0</span>
+                        <button class="extra-btn" onclick="updateExtra('refresco', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="extra-item">
+                <span>Papas gajo</span>
+                <div class="extra-info">
+                    <span class="extra-price">55$ MXN</span>
+                    <div class="extra-counter">
+                        <button class="extra-btn" onclick="updateExtra('papasGajo', -1)">-</button>
+                        <span class="extra-quantity" id="papasGajo-quantity">0</span>
+                        <button class="extra-btn" onclick="updateExtra('papasGajo', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="extra-item">
+                <span>Papas fritas</span>
+                <div class="extra-info">
+                    <span class="extra-price">30$ MXN</span>
+                    <div class="extra-counter">
+                        <button class="extra-btn" onclick="updateExtra('papasFritas', -1)">-</button>
+                        <span class="extra-quantity" id="papasFritas-quantity">0</span>
+                        <button class="extra-btn" onclick="updateExtra('papasFritas', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                <span class="quantity-display" id="quantity">1</span>
+                <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+            </div>
+
+            <button class="add-to-cart" onclick="addToCart()">
+                Agregar al carrito 80$ MXN
+            </button>
+        </div>
+    </div>
+<script src="/js/carrito1.js"></script>
+</body>
+</html>
