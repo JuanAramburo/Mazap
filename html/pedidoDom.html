@@ -9,16 +9,17 @@
 <body>
     <header>
         <button class="back-button" onclick="goBack()"><img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="flecha"></button>
-        <br>
         <h2>Resumen de tu pedido</h2>
     </header>
 
-    <section>
+    <section class="seccion">
         <ul id="cart-summary"></ul>
 
         <div class="payment-methods">
-            <h3>Metodo de pago</h3>
-            <button id="btnCambiarPago">Cambiar metodo de pago</button>
+            <div class="titulopago">
+                <h3>Metodo de pago</h3>
+                <button id="btnCambiarPago" class="btn-cambiar">Cambiar metodo de pago</button>
+            </div>
             <div class="pago">
                 <label class="method"><img src="/img/metodo-de-pago.png" alt="" class="metodo"> Tarjeta</label>
                 <label class="method"><img src="/img/cuenta-bancaria.png" alt="" class="metodo"> Cuenta de banco</label>
@@ -26,10 +27,10 @@
             </div>
         </div>
 
-        <h4>Dirreccion de la tienda: </h4>
+        <h4>Direccion de la tienda: </h4>
         <div class="address">
-            <span><img src="/img/mapas-y-banderas.png" alt="" class="direccion"> Mazatlán, Sin.</span>
-            <button class="editar"><img src="/img/circulo.png" alt="" class="editar"></button>
+            <p id="direccionSeleccionada"><img src="/img/mapas-y-banderas.png" alt="" class="direccion"> No hay dirección seleccionada</p>
+            <button class="editar" onclick="window.location.href='direccion.html'"><img src="/img/circulo.png" alt="" class="editar"></button>
         </div>
 
 

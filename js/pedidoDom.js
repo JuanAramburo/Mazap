@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obtener carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let subtotal = 0;
-    let descuento = 80; // Ajusta este valor si el descuento es variable
+    let descuento = 20; // Ajusta este valor si el descuento es variable
     let total = 0;
 
     // Verificar si el carrito tiene elementos
@@ -18,13 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cart.forEach(item => {
             const li = document.createElement('li');
+            li.classList.add('cart-item');
+
             li.innerHTML = `
-                <strong>${item.burgerName} x${item.burgerQuantity}</strong>
-                <p>Extras: ${Object.entries(item.extras)
-                    .filter(([key, value]) => value > 0)
-                    .map(([key, value]) => `${key} (${value})`)
-                    .join(', ') || 'Ninguno'}</p>
-                <p><strong>${item.totalPrice}$ MXN</strong></p>
+                <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-img">
+                <div class="cart-info">
+                    <strong>${item.burgerName} x${item.burgerQuantity}</strong>
+                    <p>Extras: ${Object.entries(item.extras)
+                        .filter(([key, value]) => value > 0)
+                        .map(([key, value]) => `${key} (${value})`)
+                        .join(', ') || 'Ninguno'}</p>
+                    <p><strong>${item.totalPrice}$ MXN</strong></p>
+                </div>
             `;
             cartSummary.appendChild(li);
             subtotal += item.totalPrice;
@@ -69,6 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
         metodoPagoDiv.innerHTML = paymentHtml;
     }
 }); 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener la dirección seleccionada de localStorage
+    const direccionSeleccionada = JSON.parse(localStorage.getItem("direccionSeleccionada"));
+
+    if (direccionSeleccionada) {
+        document.getElementById("direccionSeleccionada").innerHTML = `
+            <img src="/img/mapas-y-banderas.png" alt="" class="direccion">
+            ${direccionSeleccionada.calle} ${direccionSeleccionada.numero}${direccionSeleccionada.interior ? ", Int " + direccionSeleccionada.interior : ""}, 
+            ${direccionSeleccionada.colonia}, C.P. ${direccionSeleccionada.codigo}
+        `;
+    }
+});
 
 function goBack() {
     window.history.back(); // Regresa a la página anterior

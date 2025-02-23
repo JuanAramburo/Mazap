@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Direcciones</title>
+    <link rel="stylesheet" href="/css/direccion.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+            <h1>Mis Direcciones</h1>
+        </header>
+
+        <button class="add-btn" onclick="window.location.href='nuevaDireccion.html'">
+            <i class="fas fa-plus"></i> Agregar Dirección
+        </button>
+
+        <section id="listaDirecciones">
+            <!-- Aquí se mostrarán las direcciones guardadas -->
+        </section>
+    </div>
+
+<script src="/js/direccion.js"></script>
+</body>
+</html>

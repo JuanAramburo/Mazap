@@ -1,0 +1,63 @@
+/* General */
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor */
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+/* BOTÓN en lugar del input */
+.search-btn {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 15px 0;
+    border: none;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-btn i {
+    color: orange;
+}
+
+/* Ubicaciones */
+h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.location i {
+    color: orange;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Dirección</title>
+    <link rel="stylesheet" href="/css/nuevaDireccion.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+            <h1>Nueva Dirección</h1>
+        </header>
+
+        <form id="direccionForm">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle" required>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+
+            <label for="interior">Interior (Opcional):</label>
+            <input type="text" id="interior" name="interior">
+
+            <label for="colonia">Colonia:</label>
+            <input type="text" id="colonia" name="colonia" required>
+
+            <label for="codigo">Código Postal:</label>
+            <input type="text" id="codigo" name="codigo" required>
+
+            <button type="submit" class="save-btn">Guardar Dirección</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("direccionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener datos del formulario
+            const calle = document.getElementById("calle").value;
+            const numero = document.getElementById("numero").value;
+            const interior = document.getElementById("interior").value || "";
+            const colonia = document.getElementById("colonia").value;
+            const codigo = document.getElementById("codigo").value;
+
+            // Crear objeto de dirección
+            const nuevaDireccion = {
+                calle,
+                numero,
+                interior,
+                colonia,
+                codigo
+            };
+
+            // Obtener direcciones existentes
+            let direcciones = JSON.parse(localStorage.getItem("direcciones")) || [];
+
+            // Agregar nueva dirección
+            direcciones.push(nuevaDireccion);
+
+            // Guardar en localStorage
+            localStorage.setItem("direcciones", JSON.stringify(direcciones));
+
+            // Redirigir a la página de direcciones
+            window.location.href = "direccion.html";
+        });
+    </script>
+</body>
+</html>
