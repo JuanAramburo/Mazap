@@ -1,0 +1,166 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.back-button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    width: 80px;
+    padding: 10px;
+}
+
+.flecha {
+    width: 60px;
+}
+
+/* Contenedor del historial */
+#historialPedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Cada pedido */
+.pedido-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    width: 90%;
+    max-width: 800px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+/* Imagen del pedido */
+.pedido-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+}
+
+/* Contenedor de productos dentro de cada pedido */
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 10px;
+}
+
+/* Información de cada producto */
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 15px;
+    margin: 10px;
+}
+
+.producto-info p {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* Dispositivos Móviles (Pantallas pequeñas) */
+@media screen and (max-width: 768px) {
+    .pedido-item {
+        width: 70%;
+        padding: 10px;
+    }
+
+    /* Poner en columna y centrar todo */
+    .producto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .producto-info {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .pedido-item img {
+        max-width: 250px;
+    }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 480px) {
+    .back-button {
+        width: 50px;
+        padding: 5px;
+    }
+
+    .flecha {
+        width: 30px;
+    }
+
+    .pedido-item {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .producto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .producto-info {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .pedido-item img {
+        max-width: 200px;
+    }
+}
+
+/* PC (Mantener diseño original) */
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .producto {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .producto-info {
+        text-align: end;
+    }
+}

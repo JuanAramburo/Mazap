@@ -21,3 +21,7 @@ if (isActive) {
 hearts.forEach(heart => {
     heart.addEventListener('click', toggleHeart);
 });
+
+function goBack() {
+    window.history.back(); // Regresa a la página anterior
+}

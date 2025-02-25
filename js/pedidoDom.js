@@ -91,3 +91,43 @@ document.addEventListener("DOMContentLoaded", function() {
 function goBack() {
     window.history.back(); // Regresa a la página anterior
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const btnExito = document.getElementById("btnExito");
+
+    if (btnExito) {
+        btnExito.addEventListener("click", function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const subtotal = document.getElementById("subtotal").textContent;
+            const descuento = document.getElementById("descuento").textContent;
+            const total = document.getElementById("total").textContent;
+            const metodoPago = JSON.parse(localStorage.getItem("metodoPago")) || { metodoPago: "No seleccionado" };
+            const direccion = JSON.parse(localStorage.getItem("direccionSeleccionada")) || { calle: "No seleccionada" };
+
+            const nuevoPedido = {
+                productos: cart,
+                subtotal: subtotal,
+                descuento: descuento,
+                total: total,
+                metodoPago: metodoPago.metodoPago,
+                direccion: direccion,
+                fecha: new Date().toLocaleString()
+            };
+
+            // Obtener historial de pedidos
+            let historial = JSON.parse(localStorage.getItem("historialPedidos")) || [];
+
+            // Agregar nuevo pedido
+            historial.push(nuevoPedido);
+
+            // Guardar historial actualizado
+            localStorage.setItem("historialPedidos", JSON.stringify(historial));
+
+            // Limpiar el carrito después de la compra
+            localStorage.removeItem("cart");
+
+            // Redirigir al historial de pedidos
+            window.location.href = "historial.html";
+        });
+    }
+});

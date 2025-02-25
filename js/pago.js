@@ -128,3 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "pedidoDom.html";
     });
 });
+
+function goBack() {
+    window.history.back(); // Regresa a la página anterior
+}
