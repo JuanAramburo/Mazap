@@ -239,6 +239,11 @@ main {
     transform: translateY(-20px);
 }
 
+button:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
 @media screen and (min-width: 768px) {
     body {
         max-width: 1200px;
