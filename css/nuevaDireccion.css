@@ -1,34 +1,101 @@
-form {
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+}
+
+/* Center Header */
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+}
+
+
+.back-button{
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    width: 80px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.flecha{
+    width: 60px;
+}
+
+form{
     display: flex;
     flex-direction: column;
     gap: 10px;
     background: #222;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px;
 }
 
-label {
-    font-size: 14px;
-    color: #bbb;
+label{
+    font-size: 18px;
 }
 
-input {
+input{
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
     font-size: 14px;
     background: #333;
     color: white;
 }
 
-.save-btn {
-    margin-top: 10px;
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+button{
+    background-color: #FF9F0D;
+    border: none;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+button:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        max-width: 100%;
+    }
+}
+

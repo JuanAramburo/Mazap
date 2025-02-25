@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (savedPayment.metodoPago === "tarjeta" && savedPayment.cardInfo) {
-                savedCardDiv.innerHTML = `
+                savedCardDiv.innerHTML = `  
                     <p>Tarjeta guardada: ${savedPayment.cardInfo.maskedCard}</p>
                     <button id="change-card">Cambiar tarjeta</button>
                 `;
@@ -35,13 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardForm.style.display = "block";
                 savedCardDiv.style.display = "none";
             } else {
-                // Para otros métodos de pago
-                savedCardDiv.innerHTML = `
-                    <p>Método de pago: <img src="${savedPayment.imagenPago}" alt="Pago" class="metodo-img"></p>
-                `;
-                savedCardDiv.style.display = "block";
+                // Para otros métodos de pago (banco, efectivo, etc.)
+                savedCardDiv.style.display = "none";
                 cardForm.style.display = "none";
             }
+        } else {
+            // Si no hay pago guardado, ocultamos el div de tarjeta guardada
+            savedCardDiv.style.display = "none";
+            cardForm.style.display = "none";
         }
     }
 
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.value === "tarjeta") {
                 // Si hay una tarjeta guardada, mostrarla
                 if (savedPayment && savedPayment.metodoPago === "tarjeta" && savedPayment.cardInfo) {
-                    savedCardDiv.innerHTML = `
+                    savedCardDiv.innerHTML = `  
                         <p>Tarjeta guardada: ${savedPayment.cardInfo.maskedCard}</p>
                         <button id="change-card">Cambiar tarjeta</button>
                     `;
@@ -68,17 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     cardForm.style.display = "block";
                     savedCardDiv.style.display = "none";
                 }
-            } else {
-                // Para otros métodos de pago
+            } else if (this.value === "banco" || this.value === "efectivo") {
+                // Si se selecciona otro método de pago, ocultar la tarjeta guardada
                 cardForm.style.display = "none";
-                if (savedPayment && savedPayment.metodoPago === this.value) {
-                    savedCardDiv.innerHTML = `
-                        <p>Método de pago: <img src="${savedPayment.imagenPago}" alt="Pago" class="metodo-img"></p>
-                    `;
-                    savedCardDiv.style.display = "block";
-                } else {
-                    savedCardDiv.style.display = "none";
-                }
+                savedCardDiv.style.display = "none";
             }
         });
     });

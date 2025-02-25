@@ -15,11 +15,10 @@ function cargarDirecciones() {
             const div = document.createElement("div");
             div.classList.add("direccion-item");
             div.innerHTML = `
-                <p><strong>${direccion.calle} ${direccion.numero}${direccion.interior ? ", Int " + direccion.interior : ""}</strong></p>
-                <p>${direccion.colonia}, C.P. ${direccion.codigo}</p>
+                <p>${direccion.calle} ${direccion.numero}${direccion.interior ? ", Int " + direccion.interior : ""} ${direccion.colonia}, C.P. ${direccion.codigo}</p>
                 <div class="buttons">
                     <button class="select-btn" onclick="seleccionarDireccion(${index})">Seleccionar</button>
-                    <button class="delete-btn" onclick="eliminarDireccion(${index})">Eliminar</button>
+                    <button class="delete-btn" onclick="eliminarDireccion(${index})"><img src="/img/eliminar.png" class="eliminar"></button>
                 </div>
             `;
             listaDirecciones.appendChild(div);
@@ -46,4 +45,8 @@ function seleccionarDireccion(index) {
 
     // Redirigir a pedidosDom.html
     window.location.href = "pedidoDom.html";
+}
+
+function goBack() {
+    window.history.back(); // Regresa a la página anterior
 }

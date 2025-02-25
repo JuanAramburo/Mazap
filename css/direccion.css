@@ -1,63 +1,160 @@
-/* General */
-body {
-    background-color: #121212;
-    color: white;
-    font-family: Arial, sans-serif;
+/* Global Styles */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Contenedor */
-.container {
-    max-width: 400px;
-    margin: auto;
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
 }
 
-/* Encabezado */
+/* Center Header */
 header {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
 }
 
-/* BOTÓN en lugar del input */
-.search-btn {
-    display: flex;
-    align-items: center;
-    background-color: #222;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 15px 0;
+
+.back-button{
     border: none;
     color: white;
-    width: 100%;
     cursor: pointer;
-    font-size: 16px;
-    justify-content: center;
-    gap: 10px;
-}
-
-.search-btn i {
-    color: orange;
-}
-
-/* Ubicaciones */
-h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.location {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #222;
+    background: transparent;
+    width: 80px;
     padding: 10px;
-    border-radius: 15px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
-.location i {
-    color: orange;
+.flecha{
+    width: 60px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.anadir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.add-btn{
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #FF9F0D;
+    min-width: 250px;
+    min-height: 50px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.select-btn{
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #FF9F0D;
+    margin: 10px;
+}
+
+.delete-btn{
+    border: none;
+    background: none;
+    margin: 10px;
+}
+
+.eliminar{
+    width: 20px;
+    margin: 10px;
+}
+
+button:hover{
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.direccion-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    min-width: 250px;
+    min-height: 50px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.direccion-item p{
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .direccion-item {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .direccion-item {
+        max-width: 600px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .direccion-item {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    .direccion-item p {
+        text-align: left;
+        flex: none;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .back-button {
+        width: 60px;
+    }
+
 }
