@@ -117,18 +117,23 @@ button:hover {
 
 /* Móviles pequeños */
 @media screen and (max-width: 480px) {
+
+    header{
+        margin: 15px;
+    }
+
     .back-button {
-        width: 50px;
+        width: 82px;
         padding: 5px;
     }
 
     .flecha {
-        width: 30px;
+        width: 70px;
     }
 
     .pedido-item {
-        width: 100%;
-        padding: 8px;
+        width: 85%;
+        padding: 10px;
     }
 
     .producto {

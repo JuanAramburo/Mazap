@@ -53,13 +53,13 @@ header {
     color: white;
     cursor: pointer;
     background: transparent;
-    width: 80px;
+    width: 92px;
     padding: 10px;
     margin: 10px;
 }
 
 .flecha{
-    width: 60px;
+    width: 80px;
 }
 
 .cart-button{
@@ -146,6 +146,7 @@ h4{
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+    color: black;
 }
 
 .pago{
@@ -215,6 +216,7 @@ h4{
     padding: 15px;
     border-radius: 20px;
     margin: 20px;
+    color: black;
 }
 
 .cart-container{
@@ -343,6 +345,14 @@ button:hover{
         transform: translateY(-15px);
     }
 }
+
+@media screen and (max-width: 400px) {
+    .btn-pay{
+        width: 90%;
+    }
+
+}
+
 
 /* Desktop Styles */
 @media screen and (min-width: 768px) {

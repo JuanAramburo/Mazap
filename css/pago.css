@@ -24,12 +24,12 @@ header {
     color: white;
     cursor: pointer;
     background: transparent;
-    width: 80px;
+    width: 92px;
     padding: 10px;
 }
 
 .flecha {
-    width: 60px;
+    width: 80px;
 }
 
 section{
@@ -51,6 +51,11 @@ section{
     min-width: 200px;
     max-width: 600px;
     width: 100%;
+}
+
+.titulopago{
+    display: flex;
+    flex-direction: row;
 }
 
 .metodo {
@@ -129,14 +134,6 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
-    .back-button {
-        width: 60px;
-        padding: 5px;
-    }
-    
-    .flecha {
-        width: 40px;
-    }
     
     .payment-options {
         width: 100%;
@@ -145,6 +142,22 @@ button:hover {
     
     #btnGuardarPago {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    h2{
+        margin: 15px;
+    }
+    
+    .payment-options {
+        max-width: 350px;
+        width: 100%;
+    }
+    
+    #btnGuardarPago {
+        width: 90%;
     }
 }
 

@@ -1,38 +1,39 @@
 /* Header actualizado */
 header {
-    display: grid;
-    grid-template-columns: 80px 1fr 80px;
-    align-items: center;
-    padding: 20px;
-    background-color: #1A1A1A;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
 }
 
 .back-button {
-    width: 80px;
     border: none;
     color: white;
     cursor: pointer;
     background: transparent;
-    grid-column: 1;
+    width: 92px;
+    padding: 10px;
 }
 
-.back-button img {
+.flecha {
     width: 80px;
+}
+
+h2{
+    margin: 20px;
 }
 
 h1 {
     font-size: 20px;
     color: #FFFFFF;
+    margin: 10px;
     text-align: center;
-    grid-column: 2;
-    margin: 0 auto; /* Asegura el centrado horizontal */
 }
 
 /* El resto del CSS permanece igual */
-*, body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -236,6 +237,13 @@ main {
     border-radius: 50%;
     padding: 15px;
     transform: translateY(-20px);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
 /* Responsive Styles */
