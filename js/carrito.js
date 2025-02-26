@@ -37,8 +37,8 @@
                 <div class="item-info">
                     <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-image">
                     <div>
-                        <h3>${item.burgerName}</h3>
-                        <h3>Cantidad: ${item.burgerQuantity} x ${item.burgerPrice}$ c/u</h3>
+                        <h3>${item.burgerName} ${item.burgerPrice}$</h3>
+                        <h3>Cantidad: ${item.burgerQuantity}</h3>
                         <p>Extras:${Object.entries(item.extras)
                                     .filter(([key, value]) => value > 0)
                                     .map(([key, value]) => {
@@ -49,7 +49,7 @@
                                         if (key === 'papasGajo') extraPrice = 55;
                                         if (key === 'papasFritas') extraPrice = 30;
             
-                                        return `<p>${extraNames[key]} <br> Cantidad: ${value} x ${extraPrice}$ c/u</p>`;
+                                        return `<p>${extraNames[key]} ${extraPrice}$  <br> Cantidad: ${value}</p>`;
                                     })
                                     .join('') || ' Ninguno'}</p>
                     </div>

@@ -1,95 +1,101 @@
-        // Función para cambiar el estado del corazón
-        function toggleHeart(event) {
-            const heart = event.currentTarget; // Corazón clickeado
-            const heartIcon = heart.querySelector('.heart-icon'); // Imagen del corazón
-            const isActive = heart.getAttribute('data-state') === 'active';
-            const menuItem = heart.closest('.menu-item'); // Contenedor de la hamburguesa
+// Función para cambiar el estado del corazón
+function toggleHeart(event) {
+    const heart = event.currentTarget;
+    const heartIcon = heart.querySelector('.heart-icon');
+    const menuItem = heart.closest('.menu-item');
+    const itemId = menuItem.id;
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-            // Cambiar el estado y la imagen
-            if (isActive) {
-                heartIcon.src = "/img/corazon-vacio.png"; // Cambiar a corazón vacío
-                heart.setAttribute('data-state', 'inactive'); // Actualizar estado
-                localStorage.setItem(menuItem.id, 'inactive'); // Guardar estado en localStorage
-            } else {
-                heartIcon.src = "/img/corazon amarillo.png"; // Cambiar a corazón relleno
-                heart.setAttribute('data-state', 'active'); // Actualizar estado
-                localStorage.setItem(menuItem.id, 'active'); // Guardar estado en localStorage
-            }
+    const isFavorite = favorites.some(item => item.id === itemId);
+
+    if (isFavorite) {
+        // Confirmación antes de eliminar
+        if (!confirm("¿Estás seguro de que quieres eliminar esta hamburguesa de tus favoritos?")) {
+            return; // Si el usuario cancela, no hace nada
         }
 
-        // Función para cargar el estado de los corazones al iniciar la página
-        function loadHeartStates() {
-            const hearts = document.querySelectorAll('.heart');
+        // Eliminar de favoritos
+        favorites = favorites.filter(item => item.id !== itemId);
+        heartIcon.src = "/img/corazon-vacio.png";
+        menuItem.remove(); // Eliminar del DOM
+    } else {
+        // Agregar a favoritos
+        const newItem = {
+            id: itemId,
+            img: menuItem.querySelector('.ham').src,
+            name: menuItem.querySelector('h3').textContent,
+            price: menuItem.querySelector('.price').textContent
+        };
+        favorites.push(newItem);
+        heartIcon.src = "/img/corazon amarillo.png";
+    }
 
-            hearts.forEach(heart => {
-                const menuItem = heart.closest('.menu-item'); // Contenedor de la hamburguesa
-                const itemId = menuItem.id; // ID de la hamburguesa
-                const heartState = localStorage.getItem(itemId); // Obtener estado del localStorage
+    // Guardar cambios en localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 
-                if (heartState === 'inactive') {
-                    // Ocultar la hamburguesa si el corazón está vacío
-                    menuItem.style.display = 'none';
-                } else {
-                    // Mostrar la hamburguesa si el corazón está relleno
-                    menuItem.style.display = 'flex';
-                }
-            });
-        }
+    // Verificar si ya no hay favoritos y mostrar el mensaje
+    checkEmptyFavorites();
+}
 
-        // Función para resetear el estado de los corazones
-        function resetFavorites() {
-            // Limpiar el localStorage
-            localStorage.clear();
+// Función para cargar los favoritos al iniciar la página
+function loadFavorites() {
+    const favoritesContainer = document.querySelector('.menu-grid');
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-            // Recargar la página para aplicar los cambios
-            window.location.reload();
-        }
+    favoritesContainer.innerHTML = ''; // Limpiar antes de insertar
 
-        // Agregar el evento de clic al botón de reset
-        document.addEventListener('DOMContentLoaded', () => {
-            const resetButton = document.querySelector('.reset-button');
-            if (resetButton) {
-                resetButton.addEventListener('click', resetFavorites);
-            }
+    if (favorites.length === 0) {
+        favoritesContainer.innerHTML = '<p>No tienes favoritos aún.</p>';
+        return;
+    }
 
-            // Cargar el estado de los corazones al iniciar la página
-            loadHeartStates();
+    favorites.forEach(item => {
+        const menuItem = document.createElement('div');
+        menuItem.classList.add('menu-item');
+        menuItem.id = item.id;
+        menuItem.innerHTML = `
+            <span class="heart" data-state="active">
+                <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+            </span>
+            <img src="${item.img}" alt="${item.name}" class="ham">
+            <h3>${item.name}</h3>
+            <p class="price">${item.price}</p>
+            <button class="order-button">Ordenar</button>
+        `;
 
-            // Agregar el evento de clic a cada corazón
-            const hearts = document.querySelectorAll('.heart');
-            hearts.forEach(heart => {
-                heart.addEventListener('click', toggleHeart);
-            });
-        });
-        function goBack() {
-            window.history.back(); // Regresa a la página anterior
-        }
+        // Agregar evento de clic al corazón dentro de cada item
+        menuItem.querySelector('.heart').addEventListener('click', toggleHeart);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const favoritesContainer = document.querySelector('.menu-grid');
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        
-            favoritesContainer.innerHTML = ''; // Limpiar antes de insertar
-        
-            if (favorites.length === 0) {
-                favoritesContainer.innerHTML = '<p>No tienes favoritos aún.</p>';
-                return;
-            }
-        
-            favorites.forEach(item => {
-                const menuItem = document.createElement('div');
-                menuItem.classList.add('menu-item');
-                menuItem.id = item.id;
-                menuItem.innerHTML = `
-                    <span class="heart" data-state="active">
-                        <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
-                    </span>
-                    <img src="${item.img}" alt="${item.name}" class="ham">
-                    <h3>${item.name}</h3>
-                    <p class="price">${item.price}</p>
-                    <button class="order-button">Ordenar</button>
-                `;
-        
-                favoritesContainer.appendChild(menuItem);
-            });
-        });
+        favoritesContainer.appendChild(menuItem);
+    });
+}
+
+// Función para verificar si ya no hay favoritos y mostrar mensaje
+function checkEmptyFavorites() {
+    const favoritesContainer = document.querySelector('.menu-grid');
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    if (favorites.length === 0) {
+        favoritesContainer.innerHTML = '<p>No tienes favoritos aún.</p>';
+    }
+}
+
+// Función para resetear los favoritos
+function resetFavorites() {
+    if (!confirm("¿Estás seguro de que quieres eliminar todos los favoritos?")) {
+        return; // Si el usuario cancela, no hace nada
+    }
+
+    localStorage.removeItem('favorites'); // Eliminar solo los favoritos
+    loadFavorites(); // Recargar la lista sin refrescar la página
+}
+
+// Inicialización al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    loadFavorites();
+
+    const resetButton = document.querySelector('.reset-button');
+    if (resetButton) {
+        resetButton.addEventListener('click', resetFavorites);
+    }
+});

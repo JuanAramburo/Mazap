@@ -67,3 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heart.addEventListener('click', toggleHeart);
     });
 });
+
+function goBack() {
+    window.history.back(); // Regresa a la página anterior
+}

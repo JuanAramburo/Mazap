@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MazAppBurguer Recuperar OK</title>
+    <link rel="stylesheet" href="/css/recuperacion.css">
+    <style>
+        /* Estilos para la imagen */
+        .back-image {
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 50px; /* Ajusta el tamaño según necesites */
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .back-image:hover {
+            transform: scale(1.2); /* Efecto de agrandar al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="recovery-container">
+        <div class="logo">
+            <img src="/img/logo.png" alt="MazAppBurguer Logo">
+        </div>
+        <p class="recovery-text">
+            Se ha enviado el mensaje, Nosotros te contactaremos lo mas pronto posible.
+        </p>
+        <!-- Imagen para regresar manualmente -->
+        <img 
+            class="back-image" 
+            src="/img/ok.png"
+            alt="Regresar" 
+            onclick="window.location.href='inicio.html'"
+        >
+    </div>
+
+    <script>
+        // Redirección automática después de 8 segundos
+        setTimeout(function() {
+            window.location.href = "inicio.html";
+        }, 3000); // 8000 milisegundos = 8 segundos
+    </script>
+</body>
+</html>

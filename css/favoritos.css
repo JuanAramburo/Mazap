@@ -10,13 +10,6 @@
     z-index: 1; /* Asegura que el corazón esté por encima de otros elementos */
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    font-size: 24px;
-}
-
 .heart img {
     width: 24px; /* Tamaño del corazón */
     height: 24px;

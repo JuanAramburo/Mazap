@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 return `<p>${value} ${extraNames[key]}</p>`;
                             })
-                            .join('') || ' Ninguno'}</p>
+                            .join('') || '<br>Ninguno'}</p>
                     </div>
                 </div>
             `).join("")}
             <br>
-            <p><strong>Total del pedido: ${pedido.total}$</strong></p>
+            <center><p><strong>Total del pedido: ${pedido.total}</strong></p></center>
         `;
 
         historialContainer.appendChild(pedidoDiv);

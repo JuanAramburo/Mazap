@@ -1,0 +1,230 @@
+/* Global Styles */
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.back-button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    width: 62px;
+    padding: 10px;
+}
+
+.flecha {
+    width: 50px;
+}
+
+button:hover {
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+h1 {
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.coupon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.coupon {
+    background-color: #FF9F0D;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.coupon:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: #1A1A1A;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.coupon:after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: #1A1A1A;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.coupon h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #1A1A1A;
+}
+
+.coupon p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #1A1A1A;
+    max-width: 80%;
+}
+
+.coupon strong {
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.order-button {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.order-button:hover {
+    transform: scale(1.10);
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+    .coupon-container {
+        padding: 30px;
+    }
+    
+    .coupon {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+    
+    .back-button {
+        width: 60px;
+        left: 15px;
+    }
+    
+    .back-button img {
+        width: 60px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .coupon {
+        padding: 20px;
+    }
+    
+    .coupon h2 {
+        font-size: 18px;
+    }
+    
+    .coupon p {
+        font-size: 14px;
+    }
+    
+    .coupon strong {
+        font-size: 16px;
+    }
+    
+    .order-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    header {
+        padding: 10px;
+    }
+    
+    .back-button {
+        width: 50px;
+        left: 10px;
+    }
+    
+    .back-button img {
+        width: 50px;
+    }
+    
+    h1 {
+        font-size: 18px;
+    }
+    
+    .coupon {
+        padding: 15px;
+    }
+    
+    .coupon h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .coupon p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .coupon strong {
+        font-size: 14px;
+    }
+    
+    .order-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

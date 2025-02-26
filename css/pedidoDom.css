@@ -93,7 +93,7 @@ h4{
     margin: 20px;
 }
 
-.cart-item {
+/*.cart-item {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -126,6 +126,37 @@ h4{
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0; /* Evita que la imagen se reduzca */
+
+
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 14px;
+    background-color: #2A2A2A;
+    border-radius: 16px;
+    border-left: 4px solid #FF9F0D;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.burger-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
 
@@ -359,4 +390,50 @@ button:hover{
         transform: translateX(-50%);
         border-radius: 15px 15px 0 0;
     }
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 768px) {
+    section {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: -30px;
+    }
+
+    .payment-methods,
+    .address {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .payment-methods:hover,
+    .address:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .cart-item {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+    .cart-info {
+        align-items: center;
+    }
+    
+}
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#cart-summary {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.cart-item {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
 }

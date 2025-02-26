@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
         btnCarrito: "carrito.html",
         btnUsuario: "cuenta.html",
         btnDomicilio: "inicio.html",
+        btnPedidoLocal: "pedidoLocal.html",
         btnMostrador: "mostrador.html",
         btnPedido: "pedidoDom.html",
         btnExito: "pedidoRealizado.html",
+        btnForm: "confirmacionAtencion.html",
         cerrarSesion: "/index.html"
     };
 

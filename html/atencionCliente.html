@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención al Cliente</title>
+    <link rel="stylesheet" href="/css/atencionCliente.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()"><img src="/img/flecha-izquierda.png" alt="Volver" class="flecha"></button>
+        <h1>Atención al Cliente</h1>
+    </header>
+
+    <main>
+        <div class="contact-form">
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Por favor, completa el siguiente formulario y nos pondremos en contacto contigo.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                
+            </form>
+            <button class="submit-button" id="btnForm">Enviar</button>
+
+        </div>
+    </main>
+</body>
+</html>
+<script src="/js/mazappburger.js"></script>
