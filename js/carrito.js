@@ -51,7 +51,7 @@
             
                                         return `<p>${extraNames[key]} ${extraPrice}$  <br> Cantidad: ${value}</p>`;
                                     })
-                                    .join('') || ' Ninguno'}</p>
+                                    .join('') || '<br> Ninguno'}</p>
                     </div>
                 </div>
                 <button class="remove-item" onclick="removeItem(${index})">Eliminar</button>

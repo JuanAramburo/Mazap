@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obtener carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let subtotal = 0;
-    let descuento = 0; // Ajusta este valor si el descuento es variable
+    let descuento = 20; // Ajusta este valor si el descuento es variable
     let total = 0;
 
     // Verificar si el carrito tiene elementos
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
             li.innerHTML = `
                 <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-img">
                 <div class="cart-info">
-                    <h3>${item.burgerName}</h3>
-                    <p>Cantidad: ${item.burgerQuantity} x ${item.burgerPrice}$ c/u</p>
+                    <h3>${item.burgerName} ${item.burgerPrice}$</h3>
+                    <p>Cantidad: ${item.burgerQuantity}</p>
                     <p>Extras: ${Object.entries(item.extras)
                             .filter(([key, value]) => value > 0)
                             .map(([key, value]) => {
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 if (key === 'refresco') extraPrice = 20;
                                 if (key === 'papasGajo') extraPrice = 55;
                                 if (key === 'papasFritas') extraPrice = 30;
-                                return `<p>${extraNames[key]}: <br> Cantidad: ${value} x $${extraPrice} c/u</p>`;
+                                return `<p>${extraNames[key]} ${extraPrice}$ <br> Cantidad: ${value}</p>`;
                             })
-                            .join('') || 'Ninguno'}</p>
+                            .join('') || '<br> Ninguno'}</p>
                 </div>
             `;
 
@@ -143,5 +143,18 @@ document.addEventListener("DOMContentLoaded", function () {
             // Redirigir al historial de pedidos
             window.location.href = "historial.html";
         });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtener la sucursal seleccionada de localStorage
+    const sucursalSeleccionada = localStorage.getItem("sucursalSeleccionada");
+
+    // Mostrar la sucursal en la página
+    if (sucursalSeleccionada) {
+        document.getElementById("direccionSeleccionada").innerHTML = `
+            <img src="/img/mapas-y-banderas.png" alt="" class="direccion">
+            ${sucursalSeleccionada}
+        `;
     }
 });

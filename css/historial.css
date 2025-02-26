@@ -90,8 +90,7 @@ section{
 
 /* Imagen del pedido */
 .pedido-item img {
-    width: 100%;
-    max-width: 300px;
+    width: 200px;
     border-radius: 20px;
 }
 
@@ -268,9 +267,9 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .pedido-item{
-        margin: 10px;
+        margin: 15px;
         width: 90%;
 
     }

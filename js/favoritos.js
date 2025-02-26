@@ -99,3 +99,51 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.addEventListener('click', resetFavorites);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".search-bar");
+    const menuItems = document.querySelectorAll(".menu-item");
+    const menuGrid = document.querySelector(".menu-grid");
+
+    // Función para filtrar elementos del menú
+    function filtrarMenu() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let found = false;
+
+        menuItems.forEach(item => {
+            const title = item.querySelector("h3").textContent.toLowerCase();
+
+            if (title.includes(searchTerm)) {
+                item.style.display = "block";
+                found = true;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        // Si no hay coincidencias, mostrar un mensaje
+        if (!found) {
+            if (!document.querySelector(".no-results")) {
+                const noResults = document.createElement("p");
+                noResults.textContent = "No se encontraron resultados.";
+                noResults.classList.add("no-results");
+                menuGrid.appendChild(noResults);
+            }
+        } else {
+            const noResultsMsg = document.querySelector(".no-results");
+            if (noResultsMsg) noResultsMsg.remove();
+        }
+    }
+
+    // Detectar cambios en el input (búsqueda en tiempo real)
+    searchInput.addEventListener("input", filtrarMenu);
+
+    // Detectar tecla Enter en el input de búsqueda
+    searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            filtrarMenu();
+        }
+    });
+});
+
