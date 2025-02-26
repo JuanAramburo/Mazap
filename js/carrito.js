@@ -26,23 +26,36 @@
                 const li = document.createElement('li');
                 li.className = 'cart-item';
 
+                const extraNames = {
+                    refresco: "Refresco",
+                    papasGajo: "Papas Gajo",
+                    papasFritas: "Papas Fritas"
+                };
+
                 // Mostrar los detalles de la hamburguesa
                 li.innerHTML = `
-                    <div class="item-info">
-                        <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-image">
-                        <div>
-                            <h3>${item.burgerName} x${item.burgerQuantity}</h3>
-                            <p>Extras: ${Object.entries(item.extras)
-                                .filter(([key, value]) => value > 0)
-                                .map(([key, value]) => `${key} (${value})`)
-                                .join(', ') || 'Ninguno'}
-                            </p>
-                            <p class="item-price">${item.totalPrice}$ MXN</p>
-                        </div>
+                <div class="item-info">
+                    <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-image">
+                    <div>
+                        <h3>${item.burgerName}</h3>
+                        <h3>Cantidad: ${item.burgerQuantity} x ${item.burgerPrice}$ c/u</h3>
+                        <p>Extras:${Object.entries(item.extras)
+                                    .filter(([key, value]) => value > 0)
+                                    .map(([key, value]) => {
+                                        let extraPrice = 0;
+            
+                                        // Definir los precios de los extras según el objeto `prices`
+                                        if (key === 'refresco') extraPrice = 20;
+                                        if (key === 'papasGajo') extraPrice = 55;
+                                        if (key === 'papasFritas') extraPrice = 30;
+            
+                                        return `<p>${extraNames[key]} <br> Cantidad: ${value} x ${extraPrice}$ c/u</p>`;
+                                    })
+                                    .join('') || ' Ninguno'}</p>
                     </div>
-                    <button class="remove-item" onclick="removeItem(${index})">Eliminar</button>
-                `;
-
+                </div>
+                <button class="remove-item" onclick="removeItem(${index})">Eliminar</button>
+            `;
                 cartItems.appendChild(li);
                 totalPrice += item.totalPrice;
             });
@@ -67,10 +80,6 @@
 
         // Función para proceder al pago
         function proceedToCheckout() {
-            alert('Redirigiendo al pago...');
             window.location.href = "pedidoDom.html"
-            // Aquí puedes redirigir a una página de pago real
         }
-
-        // Cargar los elementos del carrito al iniciar la página
         document.addEventListener('DOMContentLoaded', loadCartItems);

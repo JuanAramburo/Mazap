@@ -128,6 +128,7 @@ function addToCart() {
         burgerName: burgerName.textContent,
         burgerImage: selectedBurgerImage, // Agregar la ruta de la imagen
         burgerQuantity: quantity,
+        burgerPrice: prices.burger,
         extras: extras,
         totalPrice: totalPrice
     };

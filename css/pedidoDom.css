@@ -97,27 +97,38 @@ h4{
 .cart-item {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Alinea verticalmente */
-    justify-content: space-around;
-    gap: 10px; /* Espacio entre imagen y texto */
-    padding: 10px;
-    width: 1000px; /* Asegura que no se expanda demasiado */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px;
+    border-bottom: 1px solid #1A1A1A;
+}
+
+.titulo-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.cart-item h3{
+    margin: 5px;
+}
+
+.cart-item p{
+    color: #999;
+    margin: 5px;
 }
 
 .burger-img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0; /* Evita que la imagen se reduzca */
 }
 
-.cart-info {
-    display: flex;
-    flex-direction: column;
-    flex: 3; /* Hace que solo ocupe el espacio necesario */
-    min-width: 0; /* Permite que el contenido respete el ancho */
-}
 
 .payment-methods {
     display: flex;
@@ -196,10 +207,12 @@ h4{
     width: 30px;
 }
 
-.summary {
+#cart-summary {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    background: #333;
+    border-radius: 10px;
     margin-top: 20px;
     margin: 20px;
 }
@@ -225,14 +238,6 @@ h4{
     flex-wrap: wrap;
     background-color: #414141;
     border-radius: 20px;
-}
-
-.cart-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 10px;
 }
 
 
@@ -263,38 +268,6 @@ h4{
 button:hover{
     transform: scale(1.10);
     transition: 0.5s;
-}
-
-
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1A1A1A;
-    padding: 15px;
-    border-top: 1px solid #333;
-}
-
-.nav-btn {
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-}
-
-.nav-btn img {
-    height: 45px;
-    width: 48px;
-}
-
-.main-btn {
-    background-color: #dddddd;
-    border-radius: 50%;
-    padding: 15px;
-    transform: translateY(-20px);
 }
 
 /* Ajuste para tablets */

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obtener carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let subtotal = 0;
-    let descuento = 20; // Ajusta este valor si el descuento es variable
+    let descuento = 0; // Ajusta este valor si el descuento es variable
     let total = 0;
 
     // Verificar si el carrito tiene elementos
@@ -16,21 +16,34 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         cartSummary.innerHTML = ""; // Limpiar antes de agregar elementos
 
-        cart.forEach(item => {
+        cart.forEach((item, index) => {
             const li = document.createElement('li');
             li.classList.add('cart-item');
+
+            const extraNames = {
+                refresco: "Refresco",
+                papasGajo: "Papas Gajo",
+                papasFritas: "Papas Fritas"
+            };
 
             li.innerHTML = `
                 <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-img">
                 <div class="cart-info">
-                    <strong>${item.burgerName} x${item.burgerQuantity}</strong>
+                    <h3>${item.burgerName}</h3>
+                    <p>Cantidad: ${item.burgerQuantity} x ${item.burgerPrice}$ c/u</p>
                     <p>Extras: ${Object.entries(item.extras)
-                        .filter(([key, value]) => value > 0)
-                        .map(([key, value]) => `${key} (${value})`)
-                        .join(', ') || 'Ninguno'}</p>
-                    <p><strong>${item.totalPrice}$ MXN</strong></p>
+                            .filter(([key, value]) => value > 0)
+                            .map(([key, value]) => {
+                                let extraPrice = 0;
+                                if (key === 'refresco') extraPrice = 20;
+                                if (key === 'papasGajo') extraPrice = 55;
+                                if (key === 'papasFritas') extraPrice = 30;
+                                return `<p>${extraNames[key]}: <br> Cantidad: ${value} x $${extraPrice} c/u</p>`;
+                            })
+                            .join('') || 'Ninguno'}</p>
                 </div>
             `;
+
             cartSummary.appendChild(li);
             subtotal += item.totalPrice;
         });
@@ -43,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     descuentoElement.textContent = `-${descuento}$ MXN`;
     totalElement.textContent = `${total}$ MXN`;
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const btnCambiarPago = document.getElementById("btnCambiarPago");
