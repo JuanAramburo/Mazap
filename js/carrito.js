@@ -83,3 +83,7 @@
             window.location.href = "pedidoDom.html"
         }
         document.addEventListener('DOMContentLoaded', loadCartItems);
+
+        function goBack() {
+            window.history.back(); // Regresa a la página anterior
+        }

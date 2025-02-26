@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/carrito1.css">
 </head>
 <body>
-    <img src="/img/white-arrow-road-sign-colorful-transparent-png.png" alt="Volver" class="back-button" onclick="goBack()">
+    <button class="back-button" onclick="goBack()"><img src="/img/flecha-izquierda.png" alt="Volver" class="flecha"></button>
     
     <div class="container">
         <div class="burger-info">
@@ -64,6 +64,7 @@
             </div>
 
             <div class="quantity-control">
+                <span>Cantidad de hamburguesas</span>
                 <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
                 <span class="quantity-display" id="quantity">1</span>
                 <button class="quantity-btn" onclick="updateQuantity(1)">+</button>

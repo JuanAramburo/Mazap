@@ -21,9 +21,16 @@
         }
 
         .back-button {
-            padding-left: 1rem;
-            display: flex;
-            width: 90px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            background: transparent;
+            width: 67px;
+            padding: 10px;
+        }
+        
+        .flecha {
+            width: 55px;
         }
 
         .container {
@@ -145,6 +152,11 @@
             cursor: pointer;
             margin-top: 1rem;
             font-weight: 500;
+        }
+
+        button:hover{
+            transform: scale(1.10);
+            transition: 0.5s;
         }
 
         /* Desktop styles */

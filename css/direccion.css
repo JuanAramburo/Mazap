@@ -22,18 +22,17 @@ header {
 }
 
 
-.back-button{
+.back-button {
     border: none;
     color: white;
     cursor: pointer;
     background: transparent;
-    width: 80px;
+    width: 62px;
     padding: 10px;
-    margin: 10px;
 }
 
-.flecha{
-    width: 60px;
+.flecha {
+    width: 50px;
 }
 
 .buttons{

@@ -11,27 +11,41 @@ document.addEventListener("DOMContentLoaded", function () {
         const pedidoDiv = document.createElement("div");
         pedidoDiv.classList.add("pedido-item");
 
-        pedidoDiv.innerHTML = ` 
-                    ${pedido.productos.map(item => `
-                        <div class="producto">
-                            <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-img">
-                            <div class="producto-info">
-                                <p>${item.burgerName} x${item.burgerQuantity}</p>
-                                <p>Extras: ${Object.entries(item.extras)
-                                    .filter(([key, value]) => value > 0)
-                                    .map(([key, value]) => `${key} (${value})`)
-                                    .join(', ') || 'Ninguno'}</p>
-                                <p>Total: ${pedido.total}</p>
-                            </div>
-                        </div>
-                    `).join("")}
+        const extraNames = {
+            refresco: "Refresco",
+            papasGajo: "Papas Gajo",
+            papasFritas: "Papas Fritas"
+        };
+
+        pedidoDiv.innerHTML = `
+            ${pedido.productos.map(item => `
+                <div class="producto">
+                    <img src="${item.burgerImage}" alt="${item.burgerName}" class="burger-image">
+                    <div class="producto-info">
+                        <h3>${item.burgerQuantity} ${item.burgerName}</h3>
+                        <p>Extras: ${Object.entries(item.extras)
+                            .filter(([key, value]) => value > 0)
+                            .map(([key, value]) => {
+                                let extraPrice = 0;
+
+                                // Definir los precios de los extras según el objeto `prices`
+                                if (key === 'refresco') extraPrice = 20;
+                                if (key === 'papasGajo') extraPrice = 55;
+                                if (key === 'papasFritas') extraPrice = 30;
+
+                                return `<p>${value} ${extraNames[key]}</p>`;
+                            })
+                            .join('') || ' Ninguno'}</p>
+                    </div>
                 </div>
+            `).join("")}
+            <br>
+            <p><strong>Total del pedido: ${pedido.total}$</strong></p>
         `;
 
         historialContainer.appendChild(pedidoDiv);
     });
 });
-
 
 function goBack() {
     window.history.back(); // Regresa a la página anterior

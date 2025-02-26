@@ -48,18 +48,17 @@ header {
 }
 
 
-.back-button{
+.back-button {
     border: none;
     color: white;
     cursor: pointer;
     background: transparent;
-    width: 92px;
+    width: 62px;
     padding: 10px;
-    margin: 10px;
 }
 
-.flecha{
-    width: 80px;
+.flecha {
+    width: 50px;
 }
 
 .cart-button{

@@ -16,25 +16,22 @@ body {
 /* Header */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1A1A1A;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 24px;
 }
 
-.back-button, .cart-button {
+.back-button {
     border: none;
     color: white;
     cursor: pointer;
     background: transparent;
-}
-
-.back-button {
-    width: 80px;
+    width: 62px;
+    padding: 10px;
 }
 
 .flecha {
-    width: 80px;
+    width: 50px;
 }
 
 .cart-button {
@@ -109,6 +106,11 @@ h1 {
     object-fit: cover;
 }
 
+.heart{
+    position: absolute;
+    z-index: 5;
+}
+
 .menu-item h3 {
     font-size: 18px;
     margin: 10px 0;
@@ -138,6 +140,7 @@ h1 {
     align-items: center; /* Centrar verticalmente */
 }
 
+
 .order-button:hover {
     transform: scale(1.10);
 }
@@ -157,6 +160,7 @@ h1 {
     padding: 15px;
     border-top: 1px solid #333;
     border-radius: 15px 15px 0 0;
+    z-index: 10;
 }
 
 .nav-btn {

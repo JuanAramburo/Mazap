@@ -64,3 +64,32 @@
         function goBack() {
             window.history.back(); // Regresa a la página anterior
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const favoritesContainer = document.querySelector('.menu-grid');
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+            favoritesContainer.innerHTML = ''; // Limpiar antes de insertar
+        
+            if (favorites.length === 0) {
+                favoritesContainer.innerHTML = '<p>No tienes favoritos aún.</p>';
+                return;
+            }
+        
+            favorites.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
+                menuItem.id = item.id;
+                menuItem.innerHTML = `
+                    <span class="heart" data-state="active">
+                        <img src="/img/corazon amarillo.png" alt="Favorito" class="heart-icon">
+                    </span>
+                    <img src="${item.img}" alt="${item.name}" class="ham">
+                    <h3>${item.name}</h3>
+                    <p class="price">${item.price}</p>
+                    <button class="order-button">Ordenar</button>
+                `;
+        
+                favoritesContainer.appendChild(menuItem);
+            });
+        });

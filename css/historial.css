@@ -24,12 +24,12 @@ header {
     color: white;
     cursor: pointer;
     background: transparent;
-    width: 80px;
+    width: 62px;
     padding: 10px;
 }
 
 .flecha {
-    width: 60px;
+    width: 50px;
 }
 
 /* Contenedor del historial */
@@ -40,6 +40,7 @@ header {
     justify-content: center;
     width: 100%;
     max-width: 1200px;
+    padding-bottom: 100px;
 }
 
 /* Cada pedido */
@@ -89,6 +90,66 @@ header {
 button:hover {
     transform: scale(1.1);
     transition: 0.5s;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1A1A1A;
+    padding: 15px;
+    border-top: 1px solid #333;
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-btn img {
+    height: 45px;
+    width: 48px;
+}
+
+.main-btn {
+    background-color: #dddddd;
+    border-radius: 50%;
+    padding: 15px;
+    transform: translateY(-20px);
+}
+
+button:hover {
+    transform: scale(1.10);
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-btn img {
+        height: 35px;
+        width: 38px;
+    }
+
+    .main-btn {
+        padding: 10px;
+        transform: translateY(-15px);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .bottom-nav {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 15px 15px 0 0;
+    }
 }
 
 /* Dispositivos Móviles (Pantallas pequeñas) */
